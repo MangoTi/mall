@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container" id="container">
+			<header>
+				<img src="img/logo.png" alt="Logo" class="logo"/>
+				<nav>
+					<a href="#" class="active">Home</a>
+					<a href="/about.html">About Us</a>
+				</nav>
+			</header>
+			<div class="mainContainer"></div>
+		</div>
+	</body>
+</html>
+<script src="js/json.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	var vm = new Vue({
+		el:'#container',
+		data(){
+			return{
+				index:'',
+			}
+		},
+		beforeMount(){
+			this.index = location.href.split('index=')[1];
+			
+		}
+	})
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container" id="container">
+			<header>
+				<img src="img/logo.png" alt="Logo" class="logo"/>
+				<nav>
+					<a href="#" class="active">Home</a>
+					<a href="/about.html">About Us</a>
+				</nav>
+			</header>
+			<div class="banner">
+				<img :src="indexCover"/>
+			</div>
+			<div class="mainContainer">
+				<h2>Our Products</h2>
+				<div class="goodList">
+					<div class="goodItem" v-for="(item,index) in goodList">
+						<img :src="item.imgs[0]" alt=""/>
+						<a class="button" :href="'details.html?index='+index">Details ></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/json.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#container',
+		data(){
+			return {
+				indexCover:'',//首页封面
+				goodList:[],//商品列表
+			}
+		},
+		beforeMount(){
+			this.indexCover = data.cover;
+			this.goodList = data.goodList;
+		}
+	})
+</script>
