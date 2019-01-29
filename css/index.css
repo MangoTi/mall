@@ -52,11 +52,14 @@ header nav a:hover{
 }
 .container .banner{
 	width: 100%;
+}
+.content{
 	margin-top: 0.9rem;
 }
 .container .mainContainer{
 	width: 12rem;
 	margin: 0 auto;
+	padding-top: .5rem;
 }
 .container h2{
 	font-family: 'Montserrat', sans-serif;
@@ -66,7 +69,6 @@ header nav a:hover{
 	text-shadow: 2px 2px 2px rgba(16, 16, 16, 0.26);
 	padding: .1rem .3rem;
 	position: relative;	
-	margin-top: .5rem;
 }
 .container h2:before{
 	content: '';
@@ -125,3 +127,78 @@ header nav a:hover{
 	cursor: pointer;
 	border: none;
 }
+footer{
+	background: rgb(60,61,66);
+	color: #fff;
+	margin-top: 1rem;
+}
+footer .footList{
+	margin: 0 auto;
+    width: 6rem;
+}
+footer .footItem{
+	padding: .5rem 0;
+	width: 3rem;
+	float: left;
+	text-align: center;
+}
+.footItem .itemName{
+	font-size: .2rem;
+    margin-bottom: .2rem;
+}
+.clearfloat:after{
+	content: "";
+	display: block;
+	overflow: hidden;
+	height: 0;
+	clear: both;
+}
+.footItem img{
+	width: .6rem;
+}
+.footerContent{
+	width: 12rem;
+	margin: 0 auto;
+}
+/*details.css*/
+.mainContainer .leftDiv{
+	float: left;
+	width: 40%;
+}
+.mainContainer .swiper-container{
+	float: left;
+	width: 54%;
+	box-sizing: border-box;
+	margin-left: 4%;
+}
+.leftDiv .title{
+	font-size: .28rem;
+}
+.leftDiv .des{
+	margin-top: .4rem;
+}
+.leftDiv .des p{
+	font-size: .16rem;
+    line-height: .2rem;
+}
+/*details.css*/
+/*about.css*/
+.aboutContent{
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.aboutContent h2{
+	width: 3rem;
+	height: .8rem;
+    line-height: .8rem;
+    margin: 0 auto;
+    margin-bottom: .4rem;
+}
+.aboutContent p{
+	width: 8rem;
+	line-height: .35rem;
+	margin: 0 auto;
+	font-size: .2rem;
+	text-align: left;
+}
+/*about.css*/

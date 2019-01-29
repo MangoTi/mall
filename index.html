@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>Smael</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
 		<link rel="stylesheet" href="css/index.css" />
 		<link href="http://fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
 		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
@@ -14,21 +15,39 @@
 				<img src="img/logo.png" alt="Logo" class="logo"/>
 				<nav>
 					<a href="#" class="active">Home</a>
-					<a href="/about.html">About Us</a>
+					<a href="about.html">About Us</a>
 				</nav>
 			</header>
-			<div class="banner">
-				<img :src="indexCover"/>
-			</div>
-			<div class="mainContainer">
-				<h2>Our Products</h2>
-				<div class="goodList">
-					<div class="goodItem" v-for="(item,index) in goodList">
-						<img :src="item.imgs[0]" alt=""/>
-						<a class="button" :href="'details.html?index='+index">Details ></a>
+			<div class="content">
+				<div class="banner">
+					<img :src="indexCover"/>
+				</div>
+				<div class="mainContainer">
+					<h2>All Products</h2>
+					<div class="goodList clearfloat">
+						<div class="goodItem" v-for="(item,index) in goodList">
+							<img :src="item.imgs[0]" alt=""/>
+							<a class="button" :href="'details.html?index='+index">Details ></a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<footer>
+				<div class="footerContent">
+					<div class="footList clearfloat">
+						<div class="footItem">
+							<img src="img/email.png" alt="email" />
+							<p class="itemName">Email</p>
+							<p>799044049@qq.com</p>
+						</div>
+						<div class="footItem">
+							<img src="img/address.png" alt="address" />
+							<p class="itemName">Address</p>
+							<p>Unit 301, Building C, Minkang Garden, Minkang Road, Minzhi Street, Longhua District, Shenzhen City, Guangdong Province</p>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

@@ -2,8 +2,65 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>About Smael</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" href="css/index.css" />
+		<link href="http://fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+		<div class="container" id="container">
+			<header>
+				<img src="img/logo.png" alt="Logo" class="logo"/>
+				<nav>
+					<a href="index.html">Home</a>
+					<a href="about.html" class="active">About Us</a>
+				</nav>
+			</header>
+			<div class="content">
+				<div class="banner">
+					<img :src="indexCover"/>
+				</div>
+				<div class="mainContainer clearfloat">
+					<div class="aboutContent" v-for="item in about">
+						<h2>{{item.title}}</h2>
+						<p>{{item.content}}</p>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footerContent">
+					<div class="footList clearfloat">
+						<div class="footItem">
+							<img src="img/email.png" alt="email" />
+							<p class="itemName">Email</p>
+							<p>799044049@qq.com</p>
+						</div>
+						<div class="footItem">
+							<img src="img/address.png" alt="address" />
+							<p class="itemName">Address</p>
+							<p>Unit 301, Building C, Minkang Garden, Minkang Road, Minzhi Street, Longhua District, Shenzhen City, Guangdong Province</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
+<script src="js/json.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#container',
+		data(){
+			return {
+				indexCover:'',//首页封面
+				about:[],//关于
+			}
+		},
+		beforeMount(){
+			this.indexCover = data.cover;
+			this.about = data.about
+		}
+	})
+</script>

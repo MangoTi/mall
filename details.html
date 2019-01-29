@@ -2,22 +2,59 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>Smael</title>
 		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
 		<link href="http://fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
 		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container" id="container">
 			<header>
 				<img src="img/logo.png" alt="Logo" class="logo"/>
 				<nav>
-					<a href="#" class="active">Home</a>
-					<a href="/about.html">About Us</a>
+					<a href="index.html">Home</a>
+					<a href="about.html">About Us</a>
 				</nav>
 			</header>
-			<div class="mainContainer"></div>
+			<div class="content">
+				<div class="mainContainer clearfloat">
+					<div class="leftDiv">
+						<h5 class="title">{{good.title}}</h5>
+						<div class="des" v-html="good.details"></div>
+					</div>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+						 	<div class="swiper-slide" v-for="item in good.imgs">
+						 		<img :src="item" alt="photo" />
+						 	</div>
+						</div>
+						 <!-- 如果需要分页器 -->
+	    				<div class="swiper-pagination"></div>
+						 <!-- 如果需要导航按钮 -->
+					    <div class="swiper-button-prev"></div>
+					    <div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="footerContent">
+					<div class="footList clearfloat">
+						<div class="footItem">
+							<img src="img/email.png" alt="email" />
+							<p class="itemName">Email</p>
+							<p>799044049@qq.com</p>
+						</div>
+						<div class="footItem">
+							<img src="img/address.png" alt="address" />
+							<p class="itemName">Address</p>
+							<p>Unit 301, Building C, Minkang Garden, Minkang Road, Minzhi Street, Longhua District, Shenzhen City, Guangdong Province</p>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>
@@ -27,12 +64,27 @@
 		el:'#container',
 		data(){
 			return{
-				index:'',
+				index:'',//商品下标
+				good:{},//当前商品对象
 			}
 		},
 		beforeMount(){
 			this.index = location.href.split('index=')[1];
-			
+			this.good = data.goodList[this.index];
+		},
+		mounted(){
+			var swiper = new Swiper('.swiper-container',{
+				loop:true,
+				// 如果需要前进后退按钮
+			    navigation: {
+			      nextEl: '.swiper-button-next',
+			      prevEl: '.swiper-button-prev',
+			    },
+			    // 如果需要分页器
+			    pagination: {
+			      el: '.swiper-pagination',
+			    },
+			})
 		}
 	})
 </script>
